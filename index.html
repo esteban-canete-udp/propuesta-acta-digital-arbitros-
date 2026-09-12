@@ -157,7 +157,6 @@
 </head>
 <body>
 
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
   <header class="navbar">
     <a href="#" class="brand">
       FUTB✪LERO<span></span>
@@ -287,8 +286,6 @@
   </div>
 
   <!-- Login popup -->
-=======
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
   <div class="modal-overlay" id="loginModal">
     <div class="modal-card">
       <div class="modal-header">
@@ -308,40 +305,21 @@
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
 
-<<<<<<< HEAD
     /* Abrir login */
-=======
-    /* Abrir modal */
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     openBtn.addEventListener('click', () => {
       modal.classList.add('active');
     });
-
-<<<<<<< HEAD
     /* Cerrar con cruz */
-=======
-    /* Cerrar con curz */
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     closeBtn.addEventListener('click', () => {
       modal.classList.remove('active');
     });
-
-<<<<<<< HEAD
-    /* Click fuera = cerrar */
-=======
     /* click fuera = cerrar */
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('active');
       }
     });
-<<<<<<< HEAD
-
-    /* Escape = cerrar */
-=======
     /* escape = cerrar*/
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('active')) {
         modal.classList.remove('active');
