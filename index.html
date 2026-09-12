@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Cloud AWS</title>
+  <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+
+    <!-- Encabezado superior -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      FUTB✪LERO<span></span>
+    </a>
+
+    <button class="btn-login" id="openModalBtn" type="button">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      INGRESAR
+    </button>
+  </header>
+
+  <!-- Contenedor general -->
+  <div class="main-container">
+    
+    <!-- Barra lateral izquierda -->
+    <aside class="sidebar">
+      <div class="sidebar-heading">Categorías</div>
+
+      <!-- Categoria Europa -->
+      <details class="category-card">
+        <summary>
+          <span>Europa</span>
+          <span class="arrow">▼</span>
+        </summary>
+        <div class="category-body">
+          <!-- España anidada -->
+          <details class="sub-category">
+            <summary>
+              <span>España</span>
+              <span class="sub-arrow">▼</span>
+            </summary>
+            <div class="sub-body">
+              <a href="#" class="category-item">Real Madrid</a>
+              <a href="#" class="category-item">FC Barcelona</a>
+            </div>
+          </details>
+
+          <!-- Inglaterra anidada -->
+          <details class="sub-category">
+            <summary>
+              <span>Inglaterra</span>
+              <span class="sub-arrow">▼</span>
+            </summary>
+            <div class="sub-body">
+              <a href="#" class="category-item">Manchester City</a>
+              <a href="#" class="category-item">Liverpool</a>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- Categoria Sudamerica -->
+      <details class="category-card">
+        <summary>
+          <span>SudAmérica</span>
+          <span class="arrow">▼</span>
+        </summary>
+        <div class="category-body">
+          <!-- Argentina anidada -->
+          <details class="sub-category">
+            <summary>
+              <span>Argentina</span>
+              <span class="sub-arrow">▼</span>
+            </summary>
+            <div class="sub-body">
+              <a href="#" class="category-item">Boca Juniors</a>
+              <a href="#" class="category-item">River Plate</a>
+            </div>
+          </details>
+
+          <!-- Chile anidada -->
+          <details class="sub-category">
+            <summary>
+              <span>Chile</span>
+              <span class="sub-arrow">▼</span>
+            </summary>
+            <div class="sub-body">
+              <a href="#" class="category-item">Colo-Colo</a>
+              <a href="#" class="category-item">Universidad de Chile</a>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- Categoria Selecciones -->
+      <details class="category-card">
+        <summary>
+          <span>Selecciones</span>
+          <span class="arrow">▼</span>
+        </summary>
+        <div class="category-body">
+          <!-- Conmebol anidada -->
+          <details class="sub-category">
+            <summary>
+              <span>Conmebol</span>
+              <span class="sub-arrow">▼</span>
+            </summary>
+            <div class="sub-body">
+              <a href="#" class="category-item">Argentina</a>
+              <a href="#" class="category-item">Chile</a>
+            </div>
+          </details>
+
+          <!-- UEFA anidada -->
+          <details class="sub-category">
+            <summary>
+              <span>UEFA</span>
+              <span class="sub-arrow">▼</span>
+            </summary>
+            <div class="sub-body">
+              <a href="#" class="category-item">España</a>
+              <a href="#" class="category-item">Francia</a>
+            </div>
+          </details>
+        </div>
+      </details>
+    </aside>
+
+    <!-- area principal a la derecha -->
+    <main class="content-area">
+    </main>
+
+  </div>
+
+  <!-- Login popup -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Selecciona tu rol</h3>
+        <button class="btn-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="role-options">
+        <button class="btn-role" type="button">Árbitros</button>
+        <button class="btn-role" type="button">Coordinador</button>
+        <button class="btn-role" type="button">Administrador</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('loginModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    /* Abrir login */
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('active');
+    });
+
+    /* Cerrar con cruz */
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    /* Click fuera = cerrar */
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    /* Escape = cerrar */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    
+    /* Fondo pagina */
+    body {
+      background-color: #2e2e2e;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Rectangulo superior */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background-color: #000000;
+      border-bottom: 10px solid #a3e635;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-style: italic;
+      letter-spacing: -0.5px;
+      color: #a3e635;
+    }
+
+    /* Boton Ingresar */
+    .btn-login {
+      background-color: #2e2e2e;
+      color: #a3e635;
+      border: 5px solid #a3e635;
+      border-radius: 9999px;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-login:hover {
+      background-color: #a3e635;
+      border-color: #3e5813;
+      color: #2e2e2e;
+    }
+
+    /* Estructura principal (SIDEBAR + CONTENIDO) */
+    .main-container {
+      display: flex;
+      flex: 1;
+      min-height: calc(100vh - 85px);
+    }
+
+    /* Recuadro de categorias a la izquierda */
+    .sidebar {
+      width: 280px;
+      background-color: #111111;
+      border-right: 3px solid #a3e635;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sidebar-heading {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #a3e635;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    /* Cada bloque rectangular de categoria principal */
+    .category-card {
+      background-color: #2e2e2e;
+      border: 1px solid #3e5813;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .category-card:hover {
+      border-color: #a3e635;
+    }
+
+    .category-card > summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      cursor: pointer;
+      user-select: none;
+      background-color: #2e2e2e;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .category-card > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .category-card > summary:hover {
+      background-color: #000000;
+      color: #a3e635;
+    }
+
+    .arrow {
+      font-size: 0.75rem;
+      color: #a3e635;
+      transition: transform 0.2s ease;
+    }
+
+    .category-card[open] > summary .arrow,
+    .sub-category[open] > summary .sub-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* categorias #1 */
+    .category-body {
+      background-color: #111111;
+      border-top: 1px solid #2e2e2e;
+      padding: 0.25rem 0;
+    }
+
+    /* subcategorias #2 */
+    .sub-category {
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    .sub-category summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem 0.6rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #dddddd;
+      cursor: pointer;
+      user-select: none;
+      background-color: #000000;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .sub-category summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .sub-category summary:hover {
+      background-color: #2e2e2e;
+      color: #a3e635;
+    }
+
+    .sub-arrow {
+      font-size: 0.65rem;
+      color: #a3e635;
+      transition: transform 0.2s ease;
+    }
+
+    /* Items finales (Equipos / Paises especificos) */
+    .sub-body {
+      background-color: #000000;
+      padding: 0.2rem 0;
+    }
+
+    .category-item {
+      display: block;
+      padding: 0.45rem 1rem 0.45rem 2rem;
+      color: #999999;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+    }
+
+    .category-item:hover {
+      background-color: #2e2e2e;
+      color: #a3e635;
+    }
+
+    /* Espacio principal derecho */
+    .content-area {
+      flex: 1;
+      padding: 2.5rem;
+      background-color: #2e2e2e;
+    }
+
+    /* Login pop up */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #00000091;
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-card {
+      background-color: #2e2e2e;
+      border: 1px solid #a3e635;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 360px;
+      box-shadow: 0 10px 25px #3e5813;
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .btn-close {
+      background: none;
+      border: none;
+      color: #3e5813;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .btn-close:hover {
+      color: #a3e635;
+    }
+
+    .role-options {
+      display: flex;
+      flex-direction: column; 
+      gap: 0.75rem;
+    }
+
+    .btn-role {
+      background-color: #000000;
+      color: #3e5813;
+      border: 5px solid #3e5813;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-role:hover {
+      background-color: #000000;
+      border-color: #a3e635;
+      color: #a3e635;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
