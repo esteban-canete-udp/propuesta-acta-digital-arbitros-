@@ -4,160 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Cloud AWS</title>
-<<<<<<< HEAD
   <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
 
-    <!-- Encabezado superior -->
-=======
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
-    
-    /* Fondo pagina */
-    body {
-      background-color: #2e2e2e;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Rectangulo superior*/
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2.5rem;
-      background-color: #000000;
-      border-bottom: 10px solid #a3e635;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: 800;
-      font-style: italic;
-      letter-spacing: -0.5px;
-      color: #a3e635;
-    }
-
-    /* Botón Ingresar */
-    .btn-login {
-      background-color: #2e2e2e;
-      color: #a3e635;
-      border: 5px solid #a3e635;
-      border-radius: 9999px;
-      padding: 0.55rem 1.4rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .btn-login:hover {
-      background-color: #a3e635;
-      border-color: #3e5813;
-      color: #2e2e2e;
-    }
-
-    /* Modal / Popup */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .modal-card {
-      background-color: #2e2e2e;
-      border: 1px solid #a3e635;
-      border-radius: 12px;
-      padding: 2rem;
-      width: 90%;
-      max-width: 360px;
-      box-shadow: 0 10px 25px #3e5813;
-      position: relative;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .modal-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .btn-close {
-      background: none;
-      border: none;
-      color: #3e5813;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .btn-close:hover {
-      color: #a3e635;
-    }
-
-    /* Opciones del selector */
-    .role-options {
-      display: flex;
-      flex-direction: column; 
-      gap: 0.75rem;
-    }
-
-    .btn-role {
-      background-color: #000000;
-      color: #3e5813;
-      border: 5px solid #3e5813;
-      padding: 0.85rem 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    }
-
-    .btn-role:hover {
-      background-color: #000000;
-      border-color: #a3e635;
-      color: #a3e635;
-    }
-
-    /* Mostrar modal */
-    .modal-overlay.active {
-      display: flex;
-    }
-  </style>
-</head>
-<body>
-
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
+  <!-- Encabezado superior -->
   <header class="navbar">
     <a href="#" class="brand">
       FUTB✪LERO<span></span>
@@ -172,7 +23,6 @@
     </button>
   </header>
 
-<<<<<<< HEAD
   <!-- Contenedor general -->
   <div class="main-container">
     
@@ -287,8 +137,6 @@
   </div>
 
   <!-- Login popup -->
-=======
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
   <div class="modal-overlay" id="loginModal">
     <div class="modal-card">
       <div class="modal-header">
@@ -308,40 +156,24 @@
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
 
-<<<<<<< HEAD
     /* Abrir login */
-=======
-    /* Abrir modal */
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     openBtn.addEventListener('click', () => {
       modal.classList.add('active');
     });
 
-<<<<<<< HEAD
     /* Cerrar con cruz */
-=======
-    /* Cerrar con curz */
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     closeBtn.addEventListener('click', () => {
       modal.classList.remove('active');
     });
 
-<<<<<<< HEAD
     /* Click fuera = cerrar */
-=======
-    /* click fuera = cerrar */
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('active');
       }
     });
-<<<<<<< HEAD
 
     /* Escape = cerrar */
-=======
-    /* escape = cerrar*/
->>>>>>> 2fa5cd001651d01f6ebed4ad8062d167c2761d70
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('active')) {
         modal.classList.remove('active');
