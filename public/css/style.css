@@ -501,3 +501,32 @@ body {
   height: 100%;
   min-height: 500px;
 }
+  /* parte de ajustes para celu */
+@media (max-width: 900px) {
+  
+  /* comando inicial para apilar */
+  .main-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 3px solid #a3e635;
+  }
+
+  /* apilar todo lo anterior debido al esacio */
+  .content-area-tres-columnas {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  /* apilar marcador */
+  .tarjeta-marcador {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .busqueda_arbitros_y_informacion {
+    width: 100% !important; /*acomodar el espacio apesar del tamaño de la pantalla de los celulares o tablets */
+  }
+}
