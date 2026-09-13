@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FUTB✪LERO</title>
-    <link rel="stylesheet" href="public/css/style.css?v=3">
+  <link rel="stylesheet" href="public/css/style.css?v=3">
 </head>
 <body>
 
@@ -23,13 +23,11 @@
     </button>
   </header>
 
-
-
   <!-- Contenedor general -->
   <div class="main-container">
     
-    <!-- Barra lateral izquierda -->
-<aside class="sidebar">
+    <!-- Barra lateral izquierda (Intacta) -->
+    <aside class="sidebar">
       <div class="sidebar-heading">Categorías</div>
 
       <!-- Categoria Europa -->
@@ -39,7 +37,6 @@
           <span class="arrow">▼</span>
         </summary>
         <div class="category-body">
-          <!-- España anidadas -->
           <details class="sub-category">
             <summary>
               <span>España</span>
@@ -51,7 +48,6 @@
             </div>
           </details>
 
-          <!-- Inglaterra anidada -->
           <details class="sub-category">
             <summary>
               <span>Inglaterra</span>
@@ -72,7 +68,6 @@
           <span class="arrow">▼</span>
         </summary>
         <div class="category-body">
-          <!-- Argentina anidada -->
           <details class="sub-category">
             <summary>
               <span>Argentina</span>
@@ -84,7 +79,6 @@
             </div>
           </details>
 
-          <!-- Chile anidada -->
           <details class="sub-category">
             <summary>
               <span>Chile</span>
@@ -105,7 +99,6 @@
           <span class="arrow">▼</span>
         </summary>
         <div class="category-body">
-          <!-- Conmebol anidada -->
           <details class="sub-category">
             <summary>
               <span>Conmebol</span>
@@ -117,7 +110,6 @@
             </div>
           </details>
 
-          <!-- UEFA anidada -->
           <details class="sub-category">
             <summary>
               <span>UEFA</span>
@@ -130,42 +122,77 @@
           </details>
         </div>
       </details>
-</aside> <!-- Aquí termina tu barra lateral izquierda -->
+    </aside>
 
-      <!-- parte de la busqueda de arbitros -->
-    <main class="content-area" style="display: flex; flex-direction: column; width: 100%;">
+    <!-- Área principal en 3 columnas según el boceto -->
+    <main class="content-area-tres-columnas">
       
-      <!-- Ubicación de referencia para el calendario a la derecha -->
-      <div class="calendario-falso">
-        Ubicación de referencia para el calendario
-      </div>
+      <!-- Columna Central: Partidos del Día (Amarillo) + Buscador de Árbitros (Azul) -->
+      <div class="columna-central">
+        
+        <!-- Partidos del Día -->
+        <div class="partidos-dia">
+          <div class="partidos-header">PARTIDOS DEL DIA</div>
+          
+          <div class="tarjeta-marcador">
+            <span class="nombre-equipo">EQUIPO 1</span>
+            <div class="marcador-box">
+              <span class="goles">0</span>
+              <span class="separador">-</span>
+              <span class="goles">2</span>
+            </div>
+            <span class="nombre-equipo">EQUIPO 2</span>
+          </div>
 
-      <!-- Tema del panel de busqueda -->
-<div class="busqueda_arbitros_y_informacion">
-        <div class="panel_de_busqueda">
-          <svg width="15" height="13" viewBox="0 0 25 25" fill="none" stroke="#a3e635" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="10" cy="12" r="7"></circle>
-            <line x1="20" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" class="panel-search" placeholder="Buscar arbitro">
+          <div class="tarjeta-marcador">
+            <span class="nombre-equipo">EQUIPO 3</span>
+            <div class="marcador-box">
+              <span class="goles">1</span>
+              <span class="separador">-</span>
+              <span class="goles">1</span>
+            </div>
+            <span class="nombre-equipo">EQUIPO 4</span>
+          </div>
         </div>
 
-        <div class="contenedor-resultados">
-          <span class="texto-arbitro">arbitro 1</span>
-          <div class="linea-arbitro"></div>
-          
-          <span class="texto-arbitro">arbitro 2</span>
-          <div class="linea-arbitro"></div>
-          
-          <span class="texto-arbitro">arbitro 3</span>
+        <!-- Buscador de Árbitros -->
+        <div class="busqueda_arbitros_y_informacion">
+          <div class="panel_de_busqueda">
+            <svg width="15" height="13" viewBox="0 0 25 25" fill="none" stroke="#a3e635" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10" cy="12" r="7"></circle>
+              <line x1="20" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="panel-search" placeholder="Buscar arbitro">
+          </div>
+
+          <div class="contenedor-resultados">
+            <span class="texto-arbitro">arbitro 1</span>
+            <div class="linea-arbitro"></div>
+            
+            <span class="texto-arbitro">arbitro 2</span>
+            <div class="linea-arbitro"></div>
+            
+            <span class="texto-arbitro">arbitro 3</span>
+          </div>
         </div>
 
       </div>
 
-    </main> 
+      <!-- Columna Derecha: Calendario (Blanco) a lo largo -->
+      <aside class="columna-derecha-calendario">
+        <div class="calendario-contenedor">
+          <div class="calendario-header">Septiembre</div>
+          <div class="calendario-lineas">
+            <div class="linea-calendario"></div>
+            <div class="linea-calendario"></div>
+            <div class="linea-calendario"></div>
+            <div class="linea-calendario"></div>
+            <div class="linea-calendario"></div>
+            <div class="linea-calendario"></div>
+          </div>
+        </div>
+      </aside>
 
-    <!-- area principal a la derecha -->
-    <main class="content-area">
     </main>
 
   </div>
@@ -190,23 +217,20 @@
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
 
-    /* Abrir login */
     openBtn.addEventListener('click', () => {
       modal.classList.add('active');
     });
-    /* Cerrar con cruz */
+
     closeBtn.addEventListener('click', () => {
       modal.classList.remove('active');
     });
 
-    /* Click fuera = cerrar */
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('active');
       }
     });
 
-    /* Escape = cerrar */
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('active')) {
         modal.classList.remove('active');

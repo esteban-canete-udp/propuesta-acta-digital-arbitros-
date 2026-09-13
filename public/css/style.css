@@ -1,355 +1,503 @@
 * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
-    
-    /* Fondo pagina */
-    body {
-      background-color: #2e2e2e;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Rectangulo superior */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2.5rem;
-      background-color: #000000;
-      border-bottom: 10px solid #a3e635;
-    }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: 800;
-      font-style: italic;
-      letter-spacing: -0.5px;
-      color: #a3e635;
-    }
+/* Fondo pagina */
+body {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    /* Boton Ingresar */
-    .btn-login {
-      background-color: #2e2e2e;
-      color: #a3e635;
-      border: 5px solid #a3e635;
-      border-radius: 9999px;
-      padding: 0.55rem 1.4rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
-    }
+/* Rectangulo superior */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: #000000;
+  border-bottom: 10px solid #a3e635;
+}
 
-    .btn-login:hover {
-      background-color: #a3e635;
-      border-color: #3e5813;
-      color: #2e2e2e;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.5px;
+  color: #a3e635;
+}
 
-    /* Estructura principal (SIDEBAR + CONTENIDO) */
-    .main-container {
-      display: flex;
-      flex: 1;
-      min-height: calc(100vh - 85px);
-    }
+/* Boton Ingresar */
+.btn-login {
+  background-color: #2e2e2e;
+  color: #a3e635;
+  border: 5px solid #a3e635;
+  border-radius: 9999px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
 
-    /* Recuadro de categorias a la izquierda */
-    .sidebar {
-      width: 280px;
-      background-color: #111111;
-      border-right: 3px solid #a3e635;
-      padding: 1.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+.btn-login:hover {
+  background-color: #a3e635;
+  border-color: #3e5813;
+  color: #2e2e2e;
+}
 
-    .sidebar-heading {
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: #a3e635;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #2e2e2e;
-    }
+/* Estructura principal (SIDEBAR + CONTENIDO) */
+.main-container {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 85px);
+}
 
-    /* Cada bloque rectangular de categoria principal */
-    .category-card {
-      background-color: #2e2e2e;
-      border: 1px solid #3e5813;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: border-color 0.2s ease;
-    }
+/* Recuadro de categorias a la izquierda */
+.sidebar {
+  width: 280px;
+  background-color: #111111;
+  border-right: 3px solid #a3e635;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-    .category-card:hover {
-      border-color: #a3e635;
-    }
+.sidebar-heading {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #a3e635;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #2e2e2e;
+}
 
-    .category-card > summary {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #ffffff;
-      cursor: pointer;
-      user-select: none;
-      background-color: #2e2e2e;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
+/* Cada bloque rectangular de categoria principal */
+.category-card {
+  background-color: #2e2e2e;
+  border: 1px solid #3e5813;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
 
-    .category-card > summary::-webkit-details-marker {
-      display: none;
-    }
+.category-card:hover {
+  border-color: #a3e635;
+}
 
-    .category-card > summary:hover {
-      background-color: #000000;
-      color: #a3e635;
-    }
+.category-card > summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  background-color: #2e2e2e;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
-    .arrow {
-      font-size: 0.75rem;
-      color: #a3e635;
-      transition: transform 0.2s ease;
-    }
+.category-card > summary::-webkit-details-marker {
+  display: none;
+}
 
-    .category-card[open] > summary .arrow,
-    .sub-category[open] > summary .sub-arrow {
-      transform: rotate(180deg);
-    }
+.category-card > summary:hover {
+  background-color: #000000;
+  color: #a3e635;
+}
 
-    /* categorias #1 */
-    .category-body {
-      background-color: #111111;
-      border-top: 1px solid #2e2e2e;
-      padding: 0.25rem 0;
-    }
+.arrow {
+  font-size: 0.75rem;
+  color: #a3e635;
+  transition: transform 0.2s ease;
+}
 
-    /* subcategorias #2 */
-    .sub-category {
-      border-bottom: 1px solid #2e2e2e;
-    }
+.category-card[open] > summary .arrow,
+.sub-category[open] > summary .sub-arrow {
+  transform: rotate(180deg);
+}
 
-    .sub-category summary {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 1rem 0.6rem 1.25rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #dddddd;
-      cursor: pointer;
-      user-select: none;
-      background-color: #000000;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
+/* categorias #1 */
+.category-body {
+  background-color: #111111;
+  border-top: 1px solid #2e2e2e;
+  padding: 0.25rem 0;
+}
 
-/* calendario de ref*/
-.calendario-falso {
-  height: 600px;
+/* subcategorias #2 */
+.sub-category {
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.sub-category summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #dddddd;
+  cursor: pointer;
+  user-select: none;
+  background-color: #000000;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sub-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.sub-category summary:hover {
+  background-color: #2e2e2e;
+  color: #a3e635;
+}
+
+.sub-arrow {
+  font-size: 0.65rem;
+  color: #a3e635;
+  transition: transform 0.2s ease;
+}
+
+/* Items finales (Equipos / Paises especificos) */
+.sub-body {
+  background-color: #000000;
+  padding: 0.2rem 0;
+}
+
+.category-item {
+  display: block;
+  padding: 0.45rem 1rem 0.45rem 2rem;
+  color: #999999;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.category-item:hover {
+  background-color: #2e2e2e;
+  color: #a3e635;
+}
+
+/* Espacio principal derecho organizado por filas */
+.content-area {
+  flex: 1;
+  padding: 2.5rem;
+  background-color: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
-  max-width: 500px;
-  margin: 30px 30px 20px auto;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Fila superior para colocar Partidos del Día y Calendario en paralelo */
+.fila-superior {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Recuadro de Partidos del Día (Izquierda) */
+.partidos-dia {
+  flex: 1;
+  min-height: 380px;
+  background-color: #1e1e1e;
+  border: 3px solid #a3e635;
+  border-radius: 3px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.partidos-header {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #a3e635;
+  text-transform: uppercase;
+  border-bottom: 2px solid #a3e635;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Estilos agregados para las Tarjetas con Marcador */
+.tarjeta-marcador {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #a3e635;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: #111111;
+}
+
+.nombre-equipo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  flex: 1;
+  text-align: center;
+}
+
+.marcador-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2e2e2e;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid #a3e635;
+}
+
+.goles {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #a3e635;
+}
+
+.separador {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.partido-item {
+  display: flex;
+  justify-content: space-between;
+  color: #dfd4d4;
+  font-size: 0.95rem;
+}
+
+.hora {
+  color: #a3e635;
+  font-weight: 700;
+}
+
+/* Estilos agregados para el Calendario (Septiembre) */
+.calendario-contenedor {
+  flex: 1;
+  background-color: #1e1e1e;
+  border: 3px solid #a3e635;
+  border-radius: 3px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.calendario-header {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  border-bottom: 2px solid #a3e635;
+  padding-bottom: 8px;
+}
+
+.calendario-lineas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.linea-calendario {
+  height: 2px;
+  background-color: #a3e635;
+  width: 100%;
+  opacity: 0.7;
+}
+
+.calendario-falso {
+  flex: 1;
+  min-height: 350px;
+  width: 100%;
+  margin: 0;
   border: 2px dashed #a0a0a0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #a0a0a0;
+  background-color: #1e1e1e;
 }
-/* Contenedor principal del buscador */
 
+/* Fila inferior: Buscador de árbitros a lo largo */
 .busqueda_arbitros_y_informacion {
-  width: 100%;
-  max-width: 800px; 
-  margin: 50px 0 50px auto; 
+  width: 300%; /* cambia el tamaño del recuadro horizontalmente */
+  max-width: 100%;
+  margin: 0;
+  margin-top: auto;
   background-color: #1e1e1e;
   border: 3px solid #a3e635;
   border-radius: 3px;
- 
 }
 
-/*buscador  arbitro*/
+/* Buscador de árbitros */
 .panel_de_busqueda {
   display: flex;
   align-items: center;
-  padding: 15px 20px; 
+  padding: 6px 12px; /*es para hacer el recuadro mas alto o mas bajo */
   border-bottom: 3px solid #a3e635;
 }
 
-/* icono de la lupa */
 .panel_de_busqueda svg {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
-/* Caja de texto del buscador */
 .panel-search {
   background: transparent;
   border: none;
   outline: none;
   width: 100%;
-  font-size: 20px;
+  font-size: 14px;
   color: #dfd4d4;
 }
 
-/* Contenedor de las líneas y nombres */
 .contenedor-resultados {
-  padding: 20px;
+  padding: 3px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
 }
 
-/* Texto de cada árbitro */
 .texto-arbitro {
   color: #dfd4d4;
-  font-size: 15px;
+  font-size: 13px;
   width: 100%;
   text-align: left;
 }
 
-/* Líneas separadoras verdes */
 .linea-arbitro {
   height: 3px;
   background-color: #a3e635;
   width: 100%;
   border-radius: 2px;
 }
-    .sub-category summary::-webkit-details-marker {
-      display: none;
-    }
 
-    .sub-category summary:hover {
-      background-color: #2e2e2e;
-      color: #a3e635;
-    }
+/* Login pop up */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000091;
+  backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
-    .sub-arrow {
-      font-size: 0.65rem;
-      color: #a3e635;
-      transition: transform 0.2s ease;
-    }
+.modal-card {
+  background-color: #2e2e2e;
+  border: 1px solid #a3e635;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 10px 25px #3e5813;
+  position: relative;
+}
 
-    /* Items finales (Equipos / Paises especificos) */
-    .sub-body {
-      background-color: #000000;
-      padding: 0.2rem 0;
-    }
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
 
-    .category-item {
-      display: block;
-      padding: 0.45rem 1rem 0.45rem 2rem;
-      color: #999999;
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: all 0.2s ease;
-    }
+.modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
 
-    .category-item:hover {
-      background-color: #2e2e2e;
-      color: #a3e635;
-    }
+.btn-close {
+  background: none;
+  border: none;
+  color: #3e5813;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
 
-    /* Espacio principal derecho */
-    .content-area {
-      flex: 1;
-      padding: 2.5rem;
-      background-color: #2e2e2e;
-    }
+.btn-close:hover {
+  color: #a3e635;
+}
 
-    /* Login pop up */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #00000091;
-      backdrop-filter: blur(10px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
+.role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
-    .modal-card {
-      background-color: #2e2e2e;
-      border: 1px solid #a3e635;
-      border-radius: 12px;
-      padding: 2rem;
-      width: 90%;
-      max-width: 360px;
-      box-shadow: 0 10px 25px #3e5813;
-      position: relative;
-    }
+.btn-role {
+  background-color: #000000;
+  color: #3e5813;
+  border: 5px solid #3e5813;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
 
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
+.btn-role:hover {
+  background-color: #000000;
+  border-color: #a3e635;
+  color: #a3e635;
+}
 
-    .modal-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
+.modal-overlay.active {
+  display: flex;
+}
 
-    .btn-close {
-      background: none;
-      border: none;
-      color: #3e5813;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-    }
+/* Las 3 columnas */
+.content-area-tres-columnas {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #2e2e2e;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
 
-    .btn-close:hover {
-      color: #a3e635;
-    }
+.columna-central {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    .role-options {
-      display: flex;
-      flex-direction: column; 
-      gap: 0.75rem;
-    }
+.columna-derecha-calendario {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+}
 
-    .btn-role {
-      background-color: #000000;
-      color: #3e5813;
-      border: 5px solid #3e5813;
-      padding: 0.85rem 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    }
-
-    .btn-role:hover {
-      background-color: #000000;
-      border-color: #a3e635;
-      color: #a3e635;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
+.columna-derecha-calendario .calendario-contenedor {
+  height: 100%;
+  min-height: 500px;
+}
