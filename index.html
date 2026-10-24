@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FUTB✪LERO</title>
-  <link rel="stylesheet" href="public/css/style.css?v=6">
+  <link rel="stylesheet" href="public/css/style.css?v=7">
 </head>
 <body>
-
   <!-- Encabezado superior -->
   <header class="navbar">
     <a href="#" class="brand">
       FUTB✪LERO<span></span>
     </a>
-
     <button class="btn-login" id="openModalBtn" type="button">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
         <circle cx="12" cy="7" r="4"></circle>
       </svg>
@@ -23,14 +21,9 @@
     </button>
   </header>
 
-  <!-- Contenedor general -->
   <div class="main-container">
-    
-    <!-- Barra lateral izquierda (Intacta) -->
     <aside class="sidebar">
       <div class="sidebar-heading">Categorías</div>
-
-      <!-- Categoria Europa -->
       <details class="category-card">
         <summary>
           <span>Europa</span>
@@ -47,7 +40,6 @@
               <a href="#" class="category-item">FC Barcelona</a>
             </div>
           </details>
-
           <details class="sub-category">
             <summary>
               <span>Inglaterra</span>
@@ -61,7 +53,6 @@
         </div>
       </details>
 
-      <!-- Categoria Sudamerica -->
       <details class="category-card">
         <summary>
           <span>SudAmérica</span>
@@ -78,7 +69,6 @@
               <a href="#" class="category-item">River Plate</a>
             </div>
           </details>
-
           <details class="sub-category">
             <summary>
               <span>Chile</span>
@@ -91,8 +81,7 @@
           </details>
         </div>
       </details>
-
-      <!-- Categoria Selecciones -->
+      
       <details class="category-card">
         <summary>
           <span>Selecciones</span>
@@ -109,7 +98,6 @@
               <a href="#" class="category-item">Chile</a>
             </div>
           </details>
-
           <details class="sub-category">
             <summary>
               <span>UEFA</span>
@@ -124,26 +112,20 @@
       </details>
     </aside>
 
-    <!-- Área principal en 3 columnas según el boceto -->
     <main class="content-area-tres-columnas">
-      
-      <!-- Columna Central: Partidos del Día (Amarillo) + Buscador de Árbitros (Azul) -->
       <div class="columna-central">
-        
         <!-- Partidos del Día -->
         <div class="partidos-dia">
-          <div class="partidos-header">PARTIDOS DEL DIA</div>
-          
+          <div class="partidos-header">PARTIDOS DEL DÍA</div>   
           <div class="tarjeta-marcador">
             <span class="nombre-equipo">EQUIPO 1</span>
             <div class="marcador-box">
-              <span class="goles">0</span>
+              <span class="goles" id="bgGolesEq1">0</span>
               <span class="separador">-</span>
-              <span class="goles">2</span>
+              <span class="goles" id="bgGolesEq2">0</span>
             </div>
             <span class="nombre-equipo">EQUIPO 2</span>
           </div>
-
           <div class="tarjeta-marcador">
             <span class="nombre-equipo">EQUIPO 3</span>
             <div class="marcador-box">
@@ -155,30 +137,26 @@
           </div>
         </div>
 
-        <!-- Buscador de Árbitros -->
         <div class="busqueda_arbitros_y_informacion">
           <div class="panel_de_busqueda">
-            <svg width="15" height="13" viewBox="0 0 25 25" fill="none" stroke="#a3e635" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="15" height="13" viewBox="0 0 25 25" fill="none" stroke="#a3e635" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="10" cy="12" r="7"></circle>
               <line x1="20" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" class="panel-search" placeholder="Buscar arbitro">
+            <label for="panelSearchInput" class="hidden">Buscar árbitro</label>
+            <input type="text" id="panelSearchInput" class="panel-search" placeholder="Buscar árbitro">
           </div>
 
           <div class="contenedor-resultados">
-            <span class="texto-arbitro">arbitro 1</span>
+            <span class="texto-arbitro">Árbitro 1</span>
             <div class="linea-arbitro"></div>
-            
-            <span class="texto-arbitro">arbitro 2</span>
+            <span class="texto-arbitro">Árbitro 2</span>
             <div class="linea-arbitro"></div>
-            
-            <span class="texto-arbitro">arbitro 3</span>
+            <span class="texto-arbitro">Árbitro 3</span>
           </div>
         </div>
-
       </div>
 
-      <!-- Columna Derecha: Calendario (Blanco) a lo largo -->
       <aside class="columna-derecha-calendario">
         <div class="calendario-contenedor">
           <div class="calendario-header">Septiembre</div>
@@ -192,12 +170,10 @@
           </div>
         </div>
       </aside>
-
     </main>
-
   </div>
 
-  <!-- Login popup -->
+  <!-- Modal 1: Login / Roles -->
   <div class="modal-overlay" id="loginModal">
     <div class="modal-card">
       <div class="modal-header">
@@ -205,37 +181,112 @@
         <button class="btn-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
       </div>
       <div class="role-options">
-        <button class="btn-role" type="button">Árbitros</button>
-        <button class="btn-role" type="button">Coordinador</button>
-        <button class="btn-role" type="button">Administrador</button>
+        <button class="btn-role" id="btnRoleArbitro" type="button">Árbitros</button>
+        <button class="btn-role" id="btnRoleCoordinador" type="button">Coordinador</button>
+        <button class="btn-role" id="btnRoleAdmin" type="button">Administrador</button>
       </div>
     </div>
   </div>
 
-  <script>
-    const modal = document.getElementById('loginModal');
-    const openBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
+  <!-- Modal 2: Panel de Control del Árbitro -->
+  <div class="modal-overlay-arbitro" id="arbitroModal">
+    <div class="arbitro-popup-card">
+      <div class="arbitro-popup-header">
+        <h2>Control arbitral</h2>
+        <button class="btn-close" id="closeArbitroModalBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      
+      <div class="scoreboard-container">
+        <div class="team-score-box">
+          <div class="team-label">EQUIPO 1</div>
+          <div class="team-goals" id="scoreEq1">0</div>
+        </div>
+        <div class="timer-center-box">
+          <div class="time-display" id="clockDisplay">00:00</div>
+          <div class="period-badge" id="periodBadge">NO INICIADO</div>
+        </div>
+        <div class="team-score-box">
+          <div class="team-goals" id="scoreEq2">0</div>
+          <div class="team-label">EQUIPO 2</div>
+        </div>
+      </div>
 
-    openBtn.addEventListener('click', () => {
-      modal.classList.add('active');
-    });
+      <div class="main-match-controls">
+        <button class="btn-action btn-start" id="btnStartMatch" type="button">Iniciar Partido</button>
+        <button class="btn-action btn-reset" id="btnResetData" type="button">Reiniciar Datos</button>
+      </div>
 
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
+      <div class="event-registration-box">
+        <div class="section-title">Registrar Evento en Cronología</div>
+        
+        <div class="form-row-three">
+          <label for="selectPeriodo" class="hidden">Periodo</label>
+          <select id="selectPeriodo" class="custom-input">
+            <option value="1° Tiempo">1° Tiempo</option>
+            <option value="2° Tiempo">2° Tiempo</option>
+          </select>
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
+          <label for="selectEquipo" class="hidden">Equipo</label>
+          <select id="selectEquipo" class="custom-input">
+            <option value="EQUIPO 1">EQUIPO 1</option>
+            <option value="EQUIPO 2">EQUIPO 2</option>
+          </select>
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-      }
-    });
+          <label for="selectTipoEvento" class="hidden">Tipo de Evento</label>
+          <select id="selectTipoEvento" class="custom-input">
+            <option value="Gol">Gol</option>
+            <option value="Tarjeta Amarilla">Tarjeta Amarilla</option>
+            <option value="Tarjeta Roja">Tarjeta Roja</option>
+            <option value="Sustitución">Sustitución</option>
+            <option value="Falta / Incidencia">Falta</option>
+          </select>
+        </div>
+
+        <div class="form-row-single" id="standardPlayerGroup">
+          <label for="inputJugador" class="hidden">Jugador autor o involucrado</label>
+          <input type="text" id="inputJugador" class="custom-input" placeholder="Jugador autor / involucrado">
+        </div>
+
+        <div class="form-row-two hidden" id="substitutionGroup">
+          <label for="inputJugadorSale" class="hidden">Jugador que sale</label>
+          <input type="text" id="inputJugadorSale" class="custom-input" placeholder="Jugador que sale (Titular)">
+          <label for="inputJugadorEntra" class="hidden">Jugador que entra</label>
+          <input type="text" id="inputJugadorEntra" class="custom-input" placeholder="Jugador que entra (Suplente)">
+        </div>
+
+        <button class="btn-action btn-submit-event" id="btnRegisterEvent" type="button">Registrar Evento</button>
+      </div>
+
+      <div class="timeline-container">
+        <div class="section-title" style="margin-bottom: 10px;">Cronología Oficial de Eventos</div>
+        <div id="timelineList" class="timeline-list">
+          <div class="timeline-empty">No hay eventos registrados en este partido.</div>
+        </div>
+      </div>
+
+      <div class="arbitro-popup-footer">
+        <button class="btn-action btn-finish-acta" id="btnGenerateActa" type="button">Registrar Acta Digital</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="actaModal" style="z-index: 1200;">
+    <div class="modal-card" style="max-width: 550px; background-color: #1a1a1a;">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color: #a3e635;">ACTA OFICIAL DIGITAL DEL PARTIDO</h3>
+        <button class="btn-close" id="closeActaModalBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div id="actaContent" style="color: #e2e8f0; font-size: 0.9rem; max-height: 400px; overflow-y: auto; padding-right: 5px;">
+      </div>
+      <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+        <button class="btn-action btn-reset" id="btnPrintActa" style="padding: 8px 15px;" type="button">Imprimir / Guardar PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="public/js/script.js"></script>
+</body>
+</html>
   </script>
 
 </body>
