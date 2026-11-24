@@ -340,3 +340,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+// Registro de configuracion servidor AWS y MongoDB Atlas (15/11)
